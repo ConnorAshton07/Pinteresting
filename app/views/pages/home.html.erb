@@ -1,11 +1,14 @@
 <div class="jumbotron center">
 	<h1>The Savvy Gent</h1>
-	<form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-  <%= link_to "Log In", "#", class: "btn btn-primary" %>
-</form>
+	<% if user_signed_in? %>
+	# do something
+	<% else %>
+
+	<p>
+  <%= link_to "Log In", new_user_session_path, class: "btn btn-primary" %>
+  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+  
+	</p>
+	<% end %>
+
 </div>
